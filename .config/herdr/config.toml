@@ -1,0 +1,134 @@
+onboarding = false
+[theme]
+name = "rose-pine"
+
+# Gruvbox Dark Hard: built-in Gruvbox palette with its hard background.
+# [theme.custom]
+# panel_bg = "#1d2021"
+# surface_dim = "#1d2021"
+
+[terminal]
+# New panes, tabs, and workspaces inherit the source working directory.
+new_cwd = "follow"
+
+[keys]
+# Match the basic tmux muscle memory.
+prefix = "ctrl+s"
+reload_config = "prefix+r"
+detach = "prefix+d"
+new_tab = "prefix+c"
+previous_tab = "prefix+p"
+next_tab = "prefix+n"
+switch_tab = "prefix+1..9"
+focus_pane_left = "prefix+h"
+focus_pane_down = "prefix+j"
+focus_pane_up = "prefix+k"
+focus_pane_right = "prefix+l"
+split_vertical = "prefix+\\"
+split_horizontal = "prefix+minus"
+close_pane = "prefix+x"
+zoom = "prefix+z"
+resize_mode = "prefix+R"
+
+[[keys.command]]
+key = "prefix+H"
+type = "shell"
+command = '"$HERDR_BIN_PATH" pane resize --direction left --pane "$HERDR_ACTIVE_PANE_ID"'
+description = "resize pane left"
+
+[[keys.command]]
+key = "prefix+J"
+type = "shell"
+command = '"$HERDR_BIN_PATH" pane resize --direction down --pane "$HERDR_ACTIVE_PANE_ID"'
+description = "resize pane down"
+
+[[keys.command]]
+key = "prefix+K"
+type = "shell"
+command = '"$HERDR_BIN_PATH" pane resize --direction up --pane "$HERDR_ACTIVE_PANE_ID"'
+description = "resize pane up"
+
+[[keys.command]]
+key = "prefix+L"
+type = "shell"
+command = '"$HERDR_BIN_PATH" pane resize --direction right --pane "$HERDR_ACTIVE_PANE_ID"'
+description = "resize pane right"
+
+[[keys.command]]
+key = "ctrl+shift+u"
+type = "plugin_action"
+command = "usagebar.open-limits"
+description = "Agent Usage: open limits pane"
+
+[[keys.command]]
+key = "ctrl+shift+m"
+type = "plugin_action"
+command = "usagebar.refresh"
+description = "Agent Usage: refresh meters"
+
+[[keys.command]]
+key = "prefix+u"
+type = "plugin_action"
+command = "gh-pr.open-pr"
+description = "GitHub PR: open focused branch PR"
+
+[[keys.command]]
+key = "prefix+i"
+type = "plugin_action"
+command = "gh-pr.refresh"
+description = "GitHub PR: refresh focused branch status"
+
+[[keys.command]]
+key = "prefix+t"
+type = "popup"
+command = 'exec "$HOME/.local/bin/focus-pane" --cwd "$HERDR_ACTIVE_PANE_CWD" --pane "$HERDR_ACTIVE_PANE_ID"'
+description = "Focus Pane"
+width = "88%"
+height = "84%"
+
+[keys.indexed]
+# Kitty translates Cmd+1..5 to Alt+1..5.
+tabs = "alt"
+
+[ui]
+mouse_capture = true
+copy_on_select = true
+sidebar_width = 30
+sidebar_min_width = 22
+sidebar_max_width = 38
+sidebar_start_collapsed = false
+pane_borders = true
+pane_gaps = true
+pane_scrollbars = false
+sidebar_collapsed_mode = "compact"
+agent_panel_sort = "priority"
+show_agent_labels_on_pane_borders = true
+hide_tab_bar_when_single_tab = true
+tab_bar_position = "top"
+
+[ui.sidebar.agents]
+row_gap = 0
+rows = [
+  [{ token = "state_icon", bold = true }, { token = "$title", fg = "#c4a7e7", bold = true }, { token = "$pr", fg = "#9ccfd8", bold = true }],
+  [{ token = "$provider", fg = "#ebbcba" }, { token = "$limit", fg = "#9ccfd8" }],
+  [{ token = "$context", fg = "#908caa", dim = true }],
+  [{ token = "$focus", fg = "#f6c177", bold = true }],
+]
+
+[ui.sidebar.spaces]
+row_gap = 0
+rows = [
+  [{ token = "state_icon", bold = true }, { token = "workspace", fg = "#c4a7e7", bold = true }],
+  [{ token = "branch", fg = "#9ccfd8" }, "git_status"],
+]
+
+[ui.toast]
+delivery = "herdr"
+delay_seconds = 1
+
+[ui.toast.herdr]
+position = "top-right"
+
+[ui.toast.clipboard]
+enabled = true
+position = "top-right"

@@ -1,0 +1,233 @@
+# ==========================================
+# 1. 环境变量与路径 (必须在 Zim 之前加载，让补全能找到软件)
+# ==========================================
+# PATH 自动去重（无论 .zprofile/.profile 等何处重复添加）
+typeset -U path PATH
+
+# Homebrew (macOS / Linux 通用)
+if [[ -x /opt/homebrew/bin/brew ]]; then
+  eval "$(/opt/homebrew/bin/brew shellenv)"
+elif (( ${+commands[brew]} )); then
+  eval "$(brew shellenv)"
+fi
+
+# export PATH="$PATH:$(go env GOPATH)/bin"
+export PATH="$PATH:$HOME/go/bin"
+export PATH="$HOME/.config/emacs/bin:$PATH"
+export PATH="$HOME/fvm/default/bin:$PATH"
+export PATH="/opt/homebrew/opt/postgresql@17/bin:$PATH"
+export PATH="/Users/wangyiran/.antigravity/antigravity/bin:$PATH"
+export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.tuna.tsinghua.edu.cn/homebrew-bottles
+export XDG_CONFIG_HOME="$HOME/.config"
+
+# npm global packages
+export NPM_GLOBAL_HOME="$HOME/.npm-global"
+case ":$PATH:" in
+  *":$NPM_GLOBAL_HOME/bin:"*) ;;
+  *) export PATH="$NPM_GLOBAL_HOME/bin:$PATH" ;;
+esac
+
+# ==========================================
+# 2. Zim 框架初始化 (负责加载补全核心模块)
+# ==========================================
+HISTFILE=$HOME/.zsh_history
+HISTSIZE=50000
+SAVEHIST=50000
+setopt HIST_IGNORE_ALL_DUPS HIST_IGNORE_SPACE SHARE_HISTORY INC_APPEND_HISTORY HIST_REDUCE_BLANKS
+WORDCHARS=${WORDCHARS//[\/]}
+ZSH_AUTOSUGGEST_MANUAL_REBIND=1
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=242'
+ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets)
+ZIM_HOME=${ZDOTDIR:-${HOME}}/.zim
+# zimfw 管理器脚本由 Homebrew 提供 (brew install zimfw)
+ZIM_BIN=/opt/homebrew/opt/zimfw/share/zimfw.zsh
+
+# Install missing modules, and update init.zsh
+if [[ ! ${ZIM_HOME}/init.zsh -nt ${ZIM_CONFIG_FILE:-${ZDOTDIR:-${HOME}}/.zimrc} ]]; then
+  source ${ZIM_BIN} init
+fi
+
+# Initialize modules. (这一步会生成 compdef)
+source ${ZIM_HOME}/init.zsh
+source "$HOME/.config/zsh/fzf.zsh"
+# fzf 的 completion.zsh 会把 Tab 抢去（只做路径补全），这里把 Tab 交还给 fzf-tab。
+# fzf 的 Ctrl-T / Ctrl-R / Alt-C 不受影响。
+enable-fzf-tab
+
+# ==========================================
+# 3. 终端 UI (Starship 必须在 Zim 之后！)
+# ==========================================
+eval "$(starship init zsh)"
+eval "$(zoxide init zsh)"
+eval "$(tv init zsh)"
+eval "$(atuin init zsh --disable-ctrl-r --disable-up-arrow --disable-ai)"
+  bindkey '^G' atuin-search
+# ==========================================
+# 4. 终端按键绑定与光标设置
+# ==========================================
+bindkey -v
+export KEYTIMEOUT=1
+# Let Ctrl-s reach tmux instead of terminal flow control.
+[[ -t 0 ]] && stty -ixon 2>/dev/null
+
+# ── Vi mode 光标形状：插入模式用竖线，命令模式用实心块 ──
+function _cursor_block() { print -n -- $'\e[2 q' }
+function _cursor_line() { print -n -- $'\e[6 q' }
+
+function zle-keymap-select() {
+  case $KEYMAP in
+    vicmd) _cursor_block ;;
+    *)     _cursor_line ;;
+  esac
+}
+zle -N zle-keymap-select
+
+function zle-line-init() {
+  zle -K viins
+  _cursor_line
+}
+zle -N zle-line-init
+
+function preexec() { _cursor_block }
+
+# Keep Herdr's tab label aligned with the command running in this shell.
+if [[ ${HERDR_ENV:-} == 1 && -n ${HERDR_TAB_ID:-} ]] && (( ${+commands[herdr]} )); then
+  autoload -Uz add-zsh-hook
+
+  function _herdr_set_tab_title() {
+    local title=$1
+    [[ -n $title && ${_HERDR_TAB_TITLE:-} != $title ]] || return
+    command herdr tab rename "$HERDR_TAB_ID" "$title" >/dev/null 2>&1 &&
+      typeset -g _HERDR_TAB_TITLE=$title
+  }
+
+  function _herdr_tab_preexec() {
+    local command_name=${${(z)1}[1]:t}
+    local -a alias_words
+
+    if (( ${+aliases[$command_name]} )); then
+      alias_words=(${(z)aliases[$command_name]})
+      command_name=${alias_words[1]:t}
+    fi
+
+    _herdr_set_tab_title "$command_name"
+  }
+
+  function _herdr_tab_precmd() {
+    local directory=${PWD:t}
+    _herdr_set_tab_title "${directory:-/}"
+  }
+
+  add-zsh-hook preexec _herdr_tab_preexec
+  add-zsh-hook precmd _herdr_tab_precmd
+fi
+# ==========================================
+# 5. 别名与编辑器设置
+# ==========================================
+alias ls='eza --icons --group-directories-first'
+alias ll='eza -l --icons --group-directories-first --git'
+alias la='eza -la --icons --group-directories-first --git'
+alias lt='eza --tree --level=2 --icons'      # 树状，2 层
+alias ltt='eza --tree --level=3 --icons'
+alias op='opencode'
+alias hm='hermes'
+alias v='nvim'
+alias lg='lazygit'
+alias t='tmux'
+alias f='fastfetch'
+alias sp='spf'
+alias ya='yazi'
+alias e='emacs -nw'
+alias cc='claude'
+alias co='codex'
+
+# dbcli 光标：Vim INSERT 用竖线，NORMAL 用块状（仅作用于 pgcli/mycli）
+function _dbcli_with_modal_cursor() {
+  local dbcli_tool=$1
+  shift
+  PYTHONPATH="$HOME/.config/dbcli/cursor-site${PYTHONPATH:+:$PYTHONPATH}" \
+    command "$dbcli_tool" "$@"
+}
+
+function pgcli() { _dbcli_with_modal_cursor pgcli "$@" }
+function mycli() { _dbcli_with_modal_cursor mycli "$@" }
+alias ge='gemini'
+alias ag='agy'
+alias n='node'
+alias g='rg'
+alias top='btop'
+alias du='dust'
+alias df='duf'
+alias cl='clear'
+alias cat='bat --paging=never'
+alias h='herdr'
+
+
+alias dev-layout="~/.config/kitty/sessions/dev-layout.sh"
+
+export BAT_THEME="ansi"
+
+export EDITOR=nvim
+export VISUAL=nvim
+
+
+
+
+fkill() {
+  local pid
+  pid=$(procs --no-header | fzf | awk '{print $1}')
+  [[ -n "$pid" ]] && kill "${1:-TERM}" "$pid"  # 默认 TERM，需要时 fkill -9
+}
+# ==========================================
+# 6. 开发环境懒加载与工具箱
+# ==========================================
+# ---- Conda lazy load ----
+conda() {
+  unset -f conda
+# source /Users/wangyiran/miniconda3/etc/profile.d/conda.sh  # commented out by conda initialize
+  conda "$@"
+}
+
+# ---- SDKMAN ----
+export SDKMAN_DIR="/Users/wangyiran/.sdkman"
+[[ -s "/Users/wangyiran/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/wangyiran/.sdkman/bin/sdkman-init.sh"
+
+# -----NEOVIM------
+export PATH="$HOME/nvim-macos-arm64/bin:$PATH"
+
+export ENABLE_TOOL_SEARCH=false
+
+
+# pnpm
+export PNPM_HOME="/Users/wangyiran/Library/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME/bin:"*) ;;
+  *) export PATH="$PNPM_HOME/bin:$PATH" ;;
+esac
+# pnpm end
+
+# bun
+export PATH="/Users/wangyiran/.bun/bin:$PATH"
+# bun end
+# Added by Antigravity CLI installer
+export PATH="/Users/wangyiran/.local/bin:$PATH"
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/opt/homebrew/Caskroom/miniforge/base/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/opt/homebrew/Caskroom/miniforge/base/etc/profile.d/conda.sh" ]; then
+        . "/opt/homebrew/Caskroom/miniforge/base/etc/profile.d/conda.sh"
+    else
+        export PATH="/opt/homebrew/Caskroom/miniforge/base/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+
+source /Users/wangyiran/.config/broot/launcher/bash/br
+
+# Added by Antigravity IDE
+export PATH="/Users/wangyiran/.antigravity-ide/antigravity-ide/bin:$PATH"

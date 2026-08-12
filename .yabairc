@@ -1,0 +1,53 @@
+#!/usr/bin/env sh
+
+YABAI="/opt/homebrew/bin/yabai"
+
+sudo "$YABAI" --load-sa
+"$YABAI" -m signal --add event=dock_did_restart action="sudo $YABAI --load-sa"
+
+# global settings
+"$YABAI" -m config mouse_follows_focus off
+"$YABAI" -m config focus_follows_mouse off
+"$YABAI" -m config window_origin_display default
+"$YABAI" -m config window_placement second_child
+"$YABAI" -m config window_shadow on
+"$YABAI" -m config window_opacity off
+"$YABAI" -m config window_opacity_duration 2000.0
+"$YABAI" -m config active_window_opacity 1.0
+"$YABAI" -m config normal_window_opacity 0.85
+"$YABAI" -m config insert_feedback_color 0xffd75f5f
+"$YABAI" -m config split_ratio 0.50
+"$YABAI" -m config auto_balance off
+"$YABAI" -m config mouse_modifier fn
+"$YABAI" -m config mouse_action1 move
+"$YABAI" -m config mouse_action2 resize
+"$YABAI" -m config mouse_drop_action swap
+
+# general space settings
+"$YABAI" -m config layout bsp
+"$YABAI" -m config top_padding 00
+"$YABAI" -m config bottom_padding 00
+"$YABAI" -m config left_padding 00
+"$YABAI" -m config right_padding 00
+"$YABAI" -m config window_gap 10
+# yabai -m config window_animation_duration    0.00
+#borders active_color=0xffe1e3e4 inactive_color=0xff494d64 width=5.0 &
+# 排除“系统设置” App
+"$YABAI" -m rule --add app="^System Settings$" manage=off
+"$YABAI" -m rule --add app="^系统设置$" manage=off
+
+# 排除原生 tab 底层会暴露成独立窗口的 App, 避免 Cmd+T 被 yabai 平铺切半
+
+# 顺便推荐排除一些其他不适合平铺的 App
+"$YABAI" -m rule --add app="^Activity Monitor$" manage=off
+"$YABAI" -m rule --add app="^Calculator$" manage=off
+"$YABAI" -m rule --add app="^Finder$" manage=off
+"$YABAI" -m rule --add app="^访达$" manage=off
+"$YABAI" -m rule --add app="^Clash Verge$" manage=off
+"$YABAI" -m rule --add app="^Raycast$" manage=off
+"$YABAI" -m rule --add app="^Music$" manage=off
+"$YABAI" -m rule --add app="^音乐$" manage=off
+"$YABAI" -m rule --add app="^播客$" manage=off
+"$YABAI" -m rule --add app="^IINA$" manage=off
+
+"$YABAI" -m rule --apply

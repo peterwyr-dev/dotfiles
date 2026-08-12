@@ -1,0 +1,95 @@
+# =========================================================
+# 窗口焦点移动 (Focus Window) - Option + ijkl
+# =========================================================
+alt - k : yabai -m window --focus north
+alt - h : yabai -m window --focus west
+alt - j : yabai -m window --focus south
+alt - l : yabai -m window --focus east
+
+# =========================================================
+# 窗口状态切换 (Toggle Window State)
+# =========================================================
+# 切换当前窗口浮动/平铺 (Hyper + f)
+alt - f : yabai -m window --toggle float
+alt - return : open -a Kitty
+
+# =========================================================
+# 当前窗口临时布局 (Float Layouts)
+# 先确保当前窗口浮动，再按屏幕网格摆位；不影响其他窗口。
+# 回到平铺：Hyper + f
+# =========================================================
+alt - c : yabai -m query --windows --window | jq -e '."is-floating"' >/dev/null || yabai -m window --toggle float; yabai -m query --windows --window | jq -e '."is-topmost"' >/dev/null && yabai -m window --toggle topmost; yabai -m query --windows --window | jq -e '."is-sticky"' >/dev/null && yabai -m window --toggle sticky; yabai -m query --windows --window | jq -e '."is-pip"' >/dev/null && yabai -m window --toggle pip; yabai -m window --grid 24:24:4:0:16:24
+alt - a : yabai -m query --windows --window | jq -e '."is-floating"' >/dev/null || yabai -m window --toggle float; yabai -m query --windows --window | jq -e '."is-topmost"' >/dev/null && yabai -m window --toggle topmost; yabai -m query --windows --window | jq -e '."is-sticky"' >/dev/null && yabai -m window --toggle sticky; yabai -m query --windows --window | jq -e '."is-pip"' >/dev/null && yabai -m window --toggle pip; yabai -m window --grid 1:2:0:0:1:1
+alt - d : yabai -m query --windows --window | jq -e '."is-floating"' >/dev/null || yabai -m window --toggle float; yabai -m query --windows --window | jq -e '."is-topmost"' >/dev/null && yabai -m window --toggle topmost; yabai -m query --windows --window | jq -e '."is-sticky"' >/dev/null && yabai -m window --toggle sticky; yabai -m query --windows --window | jq -e '."is-pip"' >/dev/null && yabai -m window --toggle pip; yabai -m window --grid 1:2:1:0:1:1
+
+# =========================================================
+# 应用启动 (Launch Apps)
+# =========================================================
+alt - b : open -a "Google Chrome"
+alt - u : open -a "Lark"
+alt - p : open -a "PDF Expert"
+alt - v : open -a "Visual Studio Code"
+alt - o : open -a "Obsidian"
+alt - t : open -a "Typora"
+alt - z : open -a "Clash Verge"
+alt - e : open -a "ChatGPT"
+alt - w : open -a "WeChat"
+# =========================================================
+# 桌面焦点切换 (Focus Space)
+# =========================================================
+# 1. 绝对切换: Hyper + 1-0 (0代表第10个桌面)
+alt - 1 : yabai -m space --focus 1
+alt - 2 : yabai -m space --focus 2
+alt - 3 : yabai -m space --focus 3
+alt - 4 : yabai -m space --focus 4
+alt - 5 : yabai -m space --focus 5
+alt - 6 : yabai -m space --focus 6
+alt - 7 : yabai -m space --focus 7
+alt - 8 : yabai -m space --focus 8
+alt - 9 : yabai -m space --focus 9
+alt - 0 : yabai -m space --focus 10
+
+# 2. 相对循环切换: Option + q / w
+#cmd + ctrl + alt + shift - q : yabai -m space --focus prev || yabai -m space --focus last
+#cmd + ctrl + alt + shift - w : yabai -m space --focus next || yabai -m space --focus first
+# alt  - 0x21 : yabai -m space --focus prev || yabai -m space --focus last
+# alt  - 0x1E : yabai -m space --focus next || yabai -m space --focus first
+alt - 0x21 : yabai -m space --focus prev || yabai -m space --focus last
+alt - 0x1E : yabai -m space --focus next || yabai -m space --focus first
+
+
+# bsp 模式下这些手动 grid 布局通常用不上，先保留为注释。
+# 让当前窗口在屏幕绝对居中
+#alt - c : yabai -m window --grid 24:24:1:2:22:20
+# 快速近似全屏，但四周留一点很窄的边距以露出壁纸
+#alt - f : yabai -m window --grid 48:48:1:1:46:46
+
+
+# 当前窗口占满左半屏 (j = 左)
+#alt - j : yabai -m window --grid 1:2:0:0:1:1
+
+# 当前窗口占满右半屏 (l = 右)
+#alt - l : yabai -m window --grid 1:2:1:0:1:1
+
+# 当前窗口占满上半屏 (i = 上)
+#alt - i : yabai -m window --grid 2:1:0:0:1:1
+
+# 当前窗口占满下半屏 (k = 下)
+#alt - k : yabai -m window --grid 2:1:0:1:1:1
+# 3. 快速回跳: Hyper + Tab (切换回刚才的桌面)
+alt - tab : yabai -m space --focus recent
+
+# =========================================================
+# 移动窗口到指定桌面 (Move Window to Space)
+# Option + Shift + 数字直接移动当前窗口
+# =========================================================
+alt + shift - 1 : yabai -m window --space 1
+alt + shift - 2 : yabai -m window --space 2
+alt + shift - 3 : yabai -m window --space 3
+alt + shift - 4 : yabai -m window --space 4
+alt + shift - 5 : yabai -m window --space 5
+alt + shift - 6 : yabai -m window --space 6
+alt + shift - 7 : yabai -m window --space 7
+alt + shift - 8 : yabai -m window --space 8
+alt + shift - 9 : yabai -m window --space 9
+alt + shift - 0 : yabai -m window --space 10

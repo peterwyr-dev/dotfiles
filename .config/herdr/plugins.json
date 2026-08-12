@@ -1,0 +1,207 @@
+[
+  {
+    "plugin_id": "gh-pr",
+    "name": "GitHub PR Status",
+    "version": "0.4.0",
+    "min_herdr_version": "0.7.4",
+    "description": "Labels the focused agent pane's sidebar row with its branch's GitHub PR status.",
+    "manifest_path": "/Users/wangyiran/.config/herdr/plugins/github/gh-pr-9d83f0425098/herdr-plugin.toml",
+    "plugin_root": "/Users/wangyiran/.config/herdr/plugins/github/gh-pr-9d83f0425098",
+    "enabled": true,
+    "platforms": [
+      "macos",
+      "linux"
+    ],
+    "actions": [
+      {
+        "id": "open-pr",
+        "title": "Open PR in browser",
+        "contexts": [
+          "workspace"
+        ],
+        "command": [
+          "bun",
+          "bin/open-pr.ts"
+        ]
+      },
+      {
+        "id": "refresh",
+        "title": "Refresh PR status",
+        "contexts": [
+          "workspace"
+        ],
+        "command": [
+          "bun",
+          "bin/update-pr-status.ts"
+        ]
+      }
+    ],
+    "events": [
+      {
+        "on": "pane.focused",
+        "command": [
+          "bun",
+          "bin/update-pr-status.ts"
+        ]
+      },
+      {
+        "on": "worktree.created",
+        "command": [
+          "bun",
+          "bin/update-pr-status.ts"
+        ]
+      },
+      {
+        "on": "worktree.opened",
+        "command": [
+          "bun",
+          "bin/update-pr-status.ts"
+        ]
+      }
+    ],
+    "source": {
+      "kind": "github",
+      "owner": "wyattjoh",
+      "repo": "herdr-plugin-gh-pr",
+      "resolved_commit": "6fe22de9a90c569f2186595cfddc3707f55ba1bd",
+      "managed_path": "/Users/wangyiran/.config/herdr/plugins/github/gh-pr-9d83f0425098",
+      "installed_unix_ms": 1786089212431
+    }
+  },
+  {
+    "plugin_id": "usagebar",
+    "name": "Agent Usage",
+    "version": "0.5.7",
+    "min_herdr_version": "0.7.4",
+    "description": "Sidebar context meters, provider limit windows, and rate-limit toasts for Claude, Codex, OpenCode Go, OMP, Pi coding agent, and Grok",
+    "manifest_path": "/Users/wangyiran/.config/herdr/plugins/github/usagebar-33803b79d616/herdr-plugin.toml",
+    "plugin_root": "/Users/wangyiran/.config/herdr/plugins/github/usagebar-33803b79d616",
+    "enabled": true,
+    "platforms": [
+      "macos",
+      "linux"
+    ],
+    "build": [
+      {
+        "command": [
+          "bash",
+          "bin/ensure-binary.sh",
+          "--in-tree"
+        ]
+      }
+    ],
+    "actions": [
+      {
+        "id": "check-updates",
+        "title": "Check for Agent Usage updates",
+        "contexts": [
+          "workspace",
+          "pane"
+        ],
+        "command": [
+          "bash",
+          "bin/run-update-check.sh"
+        ]
+      },
+      {
+        "id": "enable-toast",
+        "title": "Enable Herdr toast delivery (safe append)",
+        "contexts": [
+          "workspace",
+          "pane"
+        ],
+        "command": [
+          "bash",
+          "bin/run-setup.sh",
+          "--write-toast"
+        ]
+      },
+      {
+        "id": "open-limits",
+        "title": "Open Agent Usage pane",
+        "contexts": [
+          "workspace",
+          "pane"
+        ],
+        "command": [
+          "bash",
+          "bin/open-limits-pane.sh"
+        ]
+      },
+      {
+        "id": "refresh",
+        "title": "Refresh usage status",
+        "contexts": [
+          "workspace",
+          "pane"
+        ],
+        "command": [
+          "bash",
+          "bin/run-status.sh"
+        ]
+      },
+      {
+        "id": "setup",
+        "title": "Setup Agent Usage (show config snippets)",
+        "contexts": [
+          "workspace",
+          "pane"
+        ],
+        "command": [
+          "bash",
+          "bin/run-setup.sh"
+        ]
+      }
+    ],
+    "events": [
+      {
+        "on": "pane.agent_status_changed",
+        "command": [
+          "bash",
+          "bin/run-notify.sh"
+        ]
+      },
+      {
+        "on": "pane.agent_status_changed",
+        "command": [
+          "bash",
+          "bin/run-status.sh"
+        ]
+      },
+      {
+        "on": "pane.focused",
+        "command": [
+          "bash",
+          "bin/run-status.sh"
+        ]
+      },
+      {
+        "on": "pane.focused",
+        "command": [
+          "bash",
+          "bin/run-update-check.sh",
+          "--auto"
+        ]
+      }
+    ],
+    "panes": [
+      {
+        "id": "limits",
+        "title": "Agent Usage",
+        "placement": "split",
+        "command": [
+          "bash",
+          "bin/run-limits-pane.sh"
+        ]
+      }
+    ],
+    "source": {
+      "kind": "github",
+      "owner": "senna-lang",
+      "repo": "herdr-agent-usage",
+      "resolved_commit": "29a11cdb3764f26e8c05db0fe3ab68ba54ea4cc9",
+      "managed_path": "/Users/wangyiran/.config/herdr/plugins/github/usagebar-33803b79d616",
+      "installed_unix_ms": 1786089053914
+    }
+  }
+]

@@ -1,0 +1,38 @@
+# macOS
+.DS_Store
+
+# Backups and runtime files
+*.log
+*.sock
+*.bak
+*.bak-*
+*~
+
+# Herdr: downloaded plugins and runtime state
+.config/herdr/.plugins.lock
+.config/herdr/release-notes.json
+.config/herdr/session.json
+.config/herdr/plugins/github/
+.config/herdr/plugins/config/*/update-check-state.json
+
+# OpenCode: generated dependencies and state
+.config/opencode/node_modules/
+.config/opencode/.caveman-active
+.config/opencode/package-lock.json
+
+# tmux Plugin Manager downloads
+.config/tmux/plugins/
+
+# Homebrew runtime lock
+.config/homebrew/*.lock
+
+# Zed conversations, databases, and local build artifacts
+.config/zed/conversations/
+.config/zed/prompts/*.mdb/
+.config/zed/t
+.config/zed/t.dSYM/
+.config/zed/settings_backup.json
+
+# Yazi packages are restored from package.toml
+.config/yazi/plugins/
+.config/yazi/flavors/

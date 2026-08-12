@@ -1,0 +1,25 @@
+{
+  "trustedformulae": [
+    "anomalyco/tap/opencode",
+    "antoniorodr/memo/memo",
+    "coursier/formulas/coursier",
+    "d12frosted/emacs-plus/emacs-plus@31",
+    "oven-sh/bun/bun",
+    "steipete/tap/codexbar",
+    "steipete/tap/remindctl"
+  ],
+  "trustedtaps": [
+    "anomalyco/tap",
+    "asmvik/formulae",
+    "d12frosted/emacs-plus",
+    "dracula/install",
+    "farion1231/ccswitch",
+    "felixkratz/formulae",
+    "hmbown/deepseek-tui",
+    "jackielii/tap",
+    "leoafarias/fvm",
+    "nikitabobko/tap",
+    "oven-sh/bun",
+    "railwaycat/emacsmacport"
+  ]
+}
