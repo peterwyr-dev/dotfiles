@@ -1,0 +1,14 @@
+# Ignore Claude Code credentials, sessions, caches, and runtime state by default.
+*
+!.gitignore
+!settings.example.json
+
+!hooks/
+!hooks/**
+
+# Keep the user-facing Claude HUD configuration, not its caches.
+!plugins/
+plugins/*
+!plugins/claude-hud/
+plugins/claude-hud/*
+!plugins/claude-hud/config.json

@@ -1,0 +1,57 @@
+{
+  "enabledPlugins": {
+    "academic-research-skills@academic-research-skills": true,
+    "clangd-lsp@claude-plugins-official": true,
+    "codex@openai-codex": true,
+    "frontend-design@claude-plugins-official": true,
+    "lua-lsp@claude-plugins-official": true,
+    "superpowers@claude-plugins-official": true
+  },
+  "env": {
+    "ANTHROPIC_AUTH_TOKEN": "REPLACE_WITH_LOCAL_TOKEN",
+    "ANTHROPIC_BASE_URL": "https://api.kimi.com/coding/",
+    "ANTHROPIC_DEFAULT_FABLE_MODEL": "k3",
+    "ANTHROPIC_DEFAULT_FABLE_MODEL_NAME": "k3",
+    "ANTHROPIC_DEFAULT_HAIKU_MODEL": "k3",
+    "ANTHROPIC_DEFAULT_HAIKU_MODEL_NAME": "k3",
+    "ANTHROPIC_DEFAULT_OPUS_MODEL": "k3",
+    "ANTHROPIC_DEFAULT_OPUS_MODEL_NAME": "k3",
+    "ANTHROPIC_DEFAULT_SONNET_MODEL": "k3",
+    "ANTHROPIC_DEFAULT_SONNET_MODEL_NAME": "k3",
+    "ANTHROPIC_MODEL": "kimi-for-coding",
+    "API_TIMEOUT_MS": "3000000",
+    "CLAUDE_CODE_AUTO_COMPACT_WINDOW": "262144",
+    "CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC": "1",
+    "CLAUDE_CODE_MAX_CONTEXT_TOKENS": "262144"
+  },
+  "extraKnownMarketplaces": {
+    "academic-research-skills": {
+      "source": {
+        "repo": "Imbad0202/academic-research-skills",
+        "source": "github"
+      }
+    },
+    "openai-codex": {
+      "source": {
+        "repo": "openai/codex-plugin-cc",
+        "source": "github"
+      }
+    }
+  },
+  "hooks": {
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "command": "bash '/Users/wangyiran/.claude/hooks/herdr-agent-state.sh' session",
+            "timeout": 10,
+            "type": "command"
+          }
+        ],
+        "matcher": "*"
+      }
+    ]
+  },
+  "includeCoAuthoredBy": false,
+  "theme": "auto"
+}

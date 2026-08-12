@@ -8,6 +8,13 @@
 *.bak-*
 *~
 
+# AI agent credentials (the agent directories have stricter local ignore files)
+.hermes/.env
+.hermes/auth.json
+.codex/auth.json
+.codex/cc-studio.*.auth.json
+.pi/agent/auth.json
+
 # Herdr: downloaded plugins and runtime state
 .config/herdr/.plugins.lock
 .config/herdr/release-notes.json

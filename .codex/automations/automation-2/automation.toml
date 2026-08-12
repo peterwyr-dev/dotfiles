@@ -1,0 +1,14 @@
+version = 1
+id = "automation-2"
+kind = "cron"
+name = "每周科技创新周报"
+prompt = "生成一份中文科技创新周报，覆盖运行日前一周（周一至周日）的重要进展。重点关注 AI、机器学习、计算机科学、软件、芯片与机器人；同时择优加入生命科学、能源、航天、材料、量子等领域的重大创新。优先采用一手资料和权威来源，交叉核实时间、事实与影响。用清晰的周报结构输出：本周摘要、重点创新（说明是什么、为何重要、潜在影响）、AI/计算机重点、跨领域观察、值得持续关注的事项。避免罗列营销发布；每项提供简短来源链接。读者熟悉 AI 和计算机领域，因此技术部分可以适度深入。以中文撰写。"
+status = "ACTIVE"
+rrule = "FREQ=WEEKLY;BYDAY=MO;BYHOUR=9;BYMINUTE=0"
+model = "gpt-5.6-luna"
+reasoning_effort = "medium"
+execution_environment = "local"
+target = { type = "project", project_id = "local-f78c3c48a1def03cd83ba5d7b9ee2bd6" }
+cwds = ["/Users/wangyiran"]
+created_at = 1783902021616
+updated_at = 1784646550399

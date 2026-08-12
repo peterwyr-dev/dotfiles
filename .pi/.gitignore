@@ -1,0 +1,24 @@
+# Ignore Pi credentials, sessions, generated model state, and dependencies by default.
+*
+!.gitignore
+!agent/
+agent/*
+!agent/AGENTS.md
+!agent/models-store.json
+!agent/settings.json
+!agent/zentui.json
+
+!agent/extensions/
+!agent/extensions/**
+!agent/prompts/
+!agent/prompts/**
+!agent/skills/
+!agent/skills/**
+!agent/themes/
+!agent/themes/**
+
+!agent/npm/
+agent/npm/*
+!agent/npm/.gitignore
+!agent/npm/package.json
+!agent/npm/package-lock.json

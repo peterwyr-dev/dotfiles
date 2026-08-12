@@ -1,0 +1,60 @@
+name: rose-pine
+description: "Rosé Pine — warm, cozy, and elegant"
+
+colors:
+  # Rosé Pine palette: https://rosepinetheme.com
+  # Base: #191724, Surface: #1f1d2e, Text: #e0def4
+  banner_border: "#eb6f92"       # Love — pink border
+  banner_title: "#e0def4"        # Text — soft white
+  banner_accent: "#c4a7e7"       # Iris — purple accent
+  banner_dim: "#6e6a86"          # Muted — softened purple-grey
+  banner_text: "#e0def4"         # Text
+  ui_accent: "#c4a7e7"           # Iris
+  ui_label: "#f6c177"            # Gold — warm highlights
+  ui_ok: "#31748f"               # Pine — muted teal
+  ui_error: "#eb6f92"            # Love — pink
+  ui_warn: "#f6c177"             # Gold
+  prompt: "#e0def4"              # Text
+  input_rule: "#eb6f92"          # Love
+  response_border: "#c4a7e7"     # Iris
+  status_bar_bg: "#1f1d2e"       # Surface
+  status_bar_text: "#e0def4"     # Text
+  status_bar_strong: "#ebbcba"   # Rose — soft pink highlight
+  status_bar_dim: "#6e6a86"      # Muted
+  status_bar_good: "#31748f"     # Pine
+  status_bar_warn: "#f6c177"     # Gold
+  status_bar_bad: "#eb6f92"      # Love
+  status_bar_critical: "#eb6f92" # Love
+  session_label: "#c4a7e7"       # Iris
+  session_border: "#6e6a86"      # Muted
+
+spinner:
+  # Subtle Rosé Pine faces
+  waiting_faces:
+    - "(✿)"
+    - "(◌)"
+    - "(✦)"
+    - "(≈)"
+    - "(•)"
+  thinking_faces:
+    - "(✿)"
+    - "(◌)"
+    - "(✦)"
+    - "(≈)"
+    - "(•)"
+  thinking_verbs:
+    - "steeping"
+    - "simmering"
+    - "tending"
+    - "blooming"
+    - "brewing"
+
+branding:
+  agent_name: "Hermes Agent"
+  welcome: "Welcome to Hermes Agent! Type your message or /help for commands."
+  goodbye: "until next time ✿"
+  response_label: " ✿ Hermes "
+  prompt_symbol: "❯"
+  help_header: "(✿) Available Commands"
+
+tool_prefix: "╎"

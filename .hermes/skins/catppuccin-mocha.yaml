@@ -1,0 +1,62 @@
+name: catppuccin-mocha
+description: "Catppuccin Mocha — soothing pastel dark theme"
+
+colors:
+  # Catppuccin Mocha palette: https://catppuccin.com/palette
+  background: "#1e1e2e"                   # Base
+
+  banner_border: "#cba6f7"                # Mauve
+  banner_title: "#b4befe"                 # Lavender
+  banner_accent: "#cba6f7"                # Mauve
+  banner_dim: "#7f849c"                   # Overlay 1
+  banner_text: "#cdd6f4"                  # Text
+
+  ui_accent: "#cba6f7"                    # Mauve
+  ui_primary: "#cdd6f4"                   # Text
+  ui_text: "#cdd6f4"                      # Text
+  ui_label: "#89b4fa"                     # Blue
+  ui_border: "#585b70"                    # Surface 2
+  ui_ok: "#a6e3a1"                        # Green
+  ui_error: "#f38ba8"                     # Red
+  ui_warn: "#f9e2af"                      # Yellow
+  ui_tool: "#fab387"                      # Peach
+  ui_thinking: "#9399b2"                  # Overlay 2
+
+  diff_added: "#20372f"                   # Green-tinted dark surface
+  diff_removed: "#3b2434"                 # Red-tinted dark surface
+  diff_added_word: "#a6e3a1"              # Green
+  diff_removed_word: "#f38ba8"            # Red
+
+  syntax_string: "#a6e3a1"                # Green
+  syntax_number: "#fab387"                # Peach
+  syntax_keyword: "#cba6f7"               # Mauve
+  syntax_comment: "#7f849c"               # Overlay 1
+
+  prompt: "#b4befe"                       # Lavender
+  input_rule: "#89b4fa"                   # Blue
+  response_border: "#cba6f7"              # Mauve
+
+  status_bar_bg: "#181825"                # Mantle
+  status_bar_text: "#cdd6f4"              # Text
+  status_bar_strong: "#b4befe"            # Lavender
+  status_bar_dim: "#7f849c"               # Overlay 1
+  status_bar_good: "#a6e3a1"              # Green
+  status_bar_warn: "#f9e2af"              # Yellow
+  status_bar_bad: "#fab387"                # Peach
+  status_bar_critical: "#f38ba8"           # Red
+
+  session_label: "#74c7ec"                 # Sapphire
+  session_border: "#6c7086"                # Overlay 0
+  voice_status_bg: "#181825"               # Mantle
+  selection_bg: "#45475a"                  # Surface 1
+  completion_menu_bg: "#1e1e2e"            # Base
+  completion_menu_current_bg: "#45475a"    # Surface 1
+  completion_menu_meta_bg: "#181825"       # Mantle
+  completion_menu_meta_current_bg: "#585b70" # Surface 2
+
+branding:
+  agent_name: "Hermes Agent"
+  prompt_symbol: "❯"
+  help_header: "Commands"
+
+tool_prefix: "┊"

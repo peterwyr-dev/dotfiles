@@ -1,0 +1,19 @@
+{
+  "lastChangelogVersion": "0.84.1",
+  "theme": "rose-pine",
+  "defaultProvider": "openai-codex",
+  "defaultModel": "gpt-5.6-sol",
+  "defaultThinkingLevel": "xhigh",
+  "enableSkillCommands": true,
+  "packages": [
+    "npm:pi-catppuccin",
+    "npm:@tran-quil/pi-rose-pine",
+    "npm:pi-zentui"
+  ],
+  "compaction": {
+    "enabled": true
+  },
+  "tuiMode": "fullscreen",
+  "fullscreenScrollbar": "auto",
+  "hideThinkingBlock": true
+}

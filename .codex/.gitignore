@@ -1,0 +1,32 @@
+# Ignore Codex credentials, sessions, databases, caches, and runtime state by default.
+*
+!.gitignore
+!AGENTS.md
+!config.example.toml
+!hooks.json
+!herdr-agent-state.sh
+
+!rules/
+!rules/**
+
+!browser/
+!browser/config.toml
+
+!computer-use/
+computer-use/*
+!computer-use/config.json
+
+# Keep automation definitions, but not generated memories or jitter state.
+!automations/
+automations/*
+!automations/*/
+!automations/*/automation.toml
+
+# Keep installed user skills, but not Codex-managed system/runtime skills.
+!skills/
+!skills/**
+skills/.system/
+skills/codex-primary-runtime/
+skills/**/.git/
+skills/**/__pycache__/
+skills/**/*.pyc

@@ -1,0 +1,669 @@
+model = "gpt-5.6-sol"
+model_reasoning_effort = "high"
+personality = "pragmatic"
+approvals_reviewer = "user"
+notify = [
+    "/Users/wangyiran/.codex/computer-use/Codex Computer Use.app/Contents/SharedSupport/SkyComputerUseClient.app/Contents/MacOS/SkyComputerUseClient",
+    "turn-ended",
+]
+service_tier = "priority"
+
+[projects."/Users/wangyiran"]
+trust_level = "trusted"
+
+[projects."/Users/wangyiran/MYCODEFILES/Database"]
+trust_level = "trusted"
+
+[projects."/Users/wangyiran/MYCODEFILES"]
+trust_level = "trusted"
+
+[projects."/Users/wangyiran/Downloads/Monopoly-Deal-main"]
+trust_level = "trusted"
+
+[projects."/Users/wangyiran/my_config"]
+trust_level = "trusted"
+
+[projects."/Users/wangyiran/IdeaProjects/DBWebDemo"]
+trust_level = "trusted"
+
+[projects."/Users/wangyiran/.config"]
+trust_level = "trusted"
+
+[projects."/Users/wangyiran/IdeaProjects/Monopoly_deal"]
+trust_level = "trusted"
+
+[projects."/Users/wangyiran/Desktop/Computer network lab/Lab4"]
+trust_level = "trusted"
+
+[projects."/Users/wangyiran/IdeaProjects/HelloFX"]
+trust_level = "trusted"
+
+[projects."/Users/wangyiran/DS_A2/Tree_Graph_impl"]
+trust_level = "trusted"
+
+[projects."/Users/wangyiran/Desktop"]
+trust_level = "trusted"
+
+[projects."/Users/wangyiran/IdeaProjects/Monopoly_deal_backup"]
+trust_level = "trusted"
+
+[projects."/Users/wangyiran/Documents"]
+trust_level = "trusted"
+
+[projects."/Users/wangyiran/MYCODEFILES/CodeBase"]
+trust_level = "trusted"
+
+[projects."/Users/wangyiran/Documents/Codex/2026-04-29/3-monopoly-deal-6-22-30"]
+trust_level = "trusted"
+
+[projects."/Users/wangyiran/Documents/Codex/2026-04-29/3-monopoly-deal-6-22-30-2"]
+trust_level = "trusted"
+
+[projects."/Users/wangyiran/IdeaProjects/WareHouse"]
+trust_level = "trusted"
+
+[projects."/Users/wangyiran/Documents/Codex/2026-04-30/files-mentioned-by-the-user-lecture"]
+trust_level = "trusted"
+
+[projects."/Users/wangyiran/my_config/nvim"]
+trust_level = "trusted"
+
+[projects."/Users/wangyiran/Downloads/Assignment-1-Source 2"]
+trust_level = "trusted"
+
+[projects."/Users/wangyiran/Downloads/Assignment-1-Source 2/src/dsa/myimpl"]
+trust_level = "trusted"
+
+[projects."/Users/wangyiran/Downloads/Assignment-1-Source"]
+trust_level = "trusted"
+
+[projects."/Users/wangyiran/Desktop/DataBases"]
+trust_level = "trusted"
+
+[projects."/Users/wangyiran/Documents/MYPROJECT/Library_Management"]
+trust_level = "trusted"
+
+[projects."/Users/wangyiran/Downloads/Assignment-2-Source 2"]
+trust_level = "trusted"
+
+[projects."/Users/wangyiran/Documents/Codex/2026-05-27/files-mentioned-by-the-user-lab"]
+trust_level = "trusted"
+
+[projects."/Users/wangyiran/MYCODEFILES/c3_learning"]
+trust_level = "trusted"
+
+[projects."/Users/wangyiran/Desktop/Review/CN_Review"]
+trust_level = "trusted"
+
+[projects."/Users/wangyiran/Desktop/English"]
+trust_level = "trusted"
+
+[projects."/Users/wangyiran/Desktop/Databases_new"]
+trust_level = "trusted"
+
+[projects."/Users/wangyiran/Desktop/Review/DS_PDF"]
+trust_level = "trusted"
+
+[projects."/Users/wangyiran/MYCODEFILES/cpp_learning"]
+trust_level = "trusted"
+
+[projects."/Users/wangyiran/Documents/Codex/2026-06-12/mac-yabai-ghostty-typora-cmd-t"]
+trust_level = "trusted"
+
+[projects."/Users/wangyiran/Documents/Codex/2026-06-13/files-mentioned-by-the-user-bdic"]
+trust_level = "trusted"
+
+[projects."/Users/wangyiran/Desktop/Oral defense"]
+trust_level = "trusted"
+
+[projects."/Users/wangyiran/Documents/Codex/2026-06-16/ok-9-ai-ai-ai-2h"]
+trust_level = "trusted"
+
+[projects."/Users/wangyiran/MYCODEFILES/java_learning/DS2"]
+trust_level = "trusted"
+
+[projects."/Users/wangyiran/Desktop/Review/DS_REVIEW"]
+trust_level = "trusted"
+
+[projects."/Users/wangyiran/.emacs.d"]
+trust_level = "trusted"
+
+[projects."/Users/wangyiran/Desktop/Review/CN_REVIEW"]
+trust_level = "trusted"
+
+[projects."/Users/wangyiran/myproject"]
+trust_level = "trusted"
+
+[projects."/Users/wangyiran/.npm-global"]
+trust_level = "trusted"
+
+[projects."/Users/wangyiran/Desktop/Review/DB_REVIEW"]
+trust_level = "trusted"
+
+[projects."/Users/wangyiran/Desktop/Final Essay"]
+trust_level = "trusted"
+
+[projects."/Users/wangyiran/Documents/Codex/2026-06-21/skill-md-https-github-com-vercel"]
+trust_level = "trusted"
+
+[projects."/Users/wangyiran/Desktop/Review/CN_PPT"]
+trust_level = "trusted"
+
+[projects."/Users/wangyiran/Desktop/Review/ComputerNetwork_Review"]
+trust_level = "trusted"
+
+[projects."/Users/wangyiran/MYCODEFILES/cpp_learning/ch03"]
+trust_level = "trusted"
+
+[projects."/Users/wangyiran/Documents/Codex/2026-07-01/b"]
+trust_level = "trusted"
+
+[projects."/Users/wangyiran/Documents/Codex/2026-07-01/cli-https-open-feishu-cn-document"]
+trust_level = "trusted"
+
+[projects."/Users/wangyiran/Documents/Codex/2026-07-01/ba"]
+trust_level = "trusted"
+
+[projects."/Users/wangyiran/Documents/Codex/2026-07-01/ru-a"]
+trust_level = "trusted"
+
+[projects."/Users/wangyiran/Documents/Codex/2026-07-01/juliusbrussee-caveman-https-github-com-juliusbrussee"]
+trust_level = "trusted"
+
+[projects."/Users/wangyiran/Documents/Codex/2026-07-01/u"]
+trust_level = "trusted"
+
+[projects."/Users/wangyiran/Desktop/ADS"]
+trust_level = "trusted"
+
+[projects."/Users/wangyiran/Documents/Codex/2026-07-02/understand-anything"]
+trust_level = "trusted"
+
+[projects."/Users/wangyiran/MYCODEFILES/rust_learning"]
+trust_level = "trusted"
+
+[projects."/Users/wangyiran/Desktop/Gabriel_AI_Lesson_1"]
+trust_level = "trusted"
+
+[projects."/Users/wangyiran/Documents/Codex/2026-07-04/xbtlin-ai-berkshire-https-github-com"]
+trust_level = "trusted"
+
+[projects."/Users/wangyiran/summer-vacation-plan"]
+trust_level = "trusted"
+
+[projects."/Users/wangyiran/Documents/Codex/2026-07-05/yon"]
+trust_level = "trusted"
+
+[projects."/Users/wangyiran/myproject/PomodoroBar"]
+trust_level = "trusted"
+
+[projects."/Users/wangyiran/Documents/Codex/2026-07-05/yo"]
+trust_level = "trusted"
+
+[projects."/Users/wangyiran/Desktop/MY_Essay"]
+trust_level = "trusted"
+
+[projects."/Users/wangyiran/Documents/Codex/2026-07-06/latex-plugin-latex-openai-bundled-use"]
+trust_level = "trusted"
+
+[projects."/Users/wangyiran/Documents/Codex/2026-07-06/coleam00-excalidraw-diagram-skill-https-github"]
+trust_level = "trusted"
+
+[projects."/Users/wangyiran/Documents/Codex/2026-07-06/academic-paper-summarizer-users-wangyiran-codex"]
+trust_level = "trusted"
+
+[projects."/Users/wangyiran/summer-vacation-plan/essay"]
+trust_level = "trusted"
+
+[projects."/Users/wangyiran/cumcm"]
+trust_level = "trusted"
+
+[projects."/Users/wangyiran/MYCODEFILES/scala_learning/hello-scala/src/main/scala"]
+trust_level = "trusted"
+
+[projects."/Users/wangyiran/MYCODEFILES/scala_learning/hello-scala"]
+trust_level = "trusted"
+
+[projects."/Users/wangyiran/Documents/Codex/2026-07-08/affaan-m-ecc-https-github-com"]
+trust_level = "trusted"
+
+[projects."/Users/wangyiran/Documents/Codex/2026-07-08/new-chat"]
+trust_level = "trusted"
+
+[projects."/Users/wangyiran/summer-vacation-plan/essay/MY_Essay/figures"]
+trust_level = "trusted"
+
+[projects."/Users/wangyiran/Documents/Codex/2026-07-08/imbad0202-academic-research-skills-https-github"]
+trust_level = "trusted"
+
+[projects."/Users/wangyiran/Desktop/essay"]
+trust_level = "trusted"
+
+[projects."/Users/wangyiran/STUDY/Scala"]
+trust_level = "trusted"
+
+[projects."/Users/wangyiran/STUDY/WebDev"]
+trust_level = "trusted"
+
+[projects."/Users/wangyiran/Documents/Codex/2026-07-10/w"]
+trust_level = "trusted"
+
+[projects."/Users/wangyiran/Desktop/AI课程资料"]
+trust_level = "trusted"
+
+[projects."/Users/wangyiran/STUDY/Spring/spring-demo"]
+trust_level = "trusted"
+
+[projects."/Users/wangyiran/STUDY/cs50"]
+trust_level = "trusted"
+
+[projects."/Users/wangyiran/Documents/Codex/2026-07-12/shan"]
+trust_level = "trusted"
+
+[projects."/Users/wangyiran/Documents/Codex/2026-07-12/new-chat"]
+trust_level = "trusted"
+
+[projects."/Users/wangyiran/.codex/skills"]
+trust_level = "trusted"
+
+[projects."/Users/wangyiran/Documents/Codex/2026-07-13/xin"]
+trust_level = "trusted"
+
+[projects."/Users/wangyiran/Documents/Codex/2026-07-13/new-chat"]
+trust_level = "trusted"
+
+[projects."/Users/wangyiran/Documents/Codex/2026-07-13/wo"]
+trust_level = "trusted"
+
+[projects."/Users/wangyiran/STUDY/Scala/learning"]
+trust_level = "trusted"
+
+[projects."/Users/wangyiran/myproject/android_learning"]
+trust_level = "trusted"
+
+[projects."/Users/wangyiran/Documents/Codex/2026-07-13/z"]
+trust_level = "trusted"
+
+[projects."/Users/wangyiran/STUDY/ds100"]
+trust_level = "trusted"
+
+[projects."/Users/wangyiran/Downloads"]
+trust_level = "trusted"
+
+[projects."/Users/wangyiran/Documents/Codex/2026-07-17/ni"]
+trust_level = "trusted"
+
+[projects."/Users/wangyiran/Desktop/TimesTables"]
+trust_level = "trusted"
+
+[projects."/Users/wangyiran/.config/nvim"]
+trust_level = "trusted"
+
+[projects."/Users/wangyiran/STUDY/summer/Scala/Scala_self_Study"]
+trust_level = "trusted"
+
+[projects."/Users/wangyiran/STUDY/summer/Notes"]
+trust_level = "trusted"
+
+[projects."/Users/wangyiran/.pi"]
+trust_level = "trusted"
+
+[projects."/Users/wangyiran/Documents/Codex/2026-07-22/new-chat"]
+trust_level = "trusted"
+
+[projects."/Users/wangyiran/Documents/Codex/2026-07-22/new-chat-3"]
+trust_level = "trusted"
+
+[projects."/Users/wangyiran/STUDY/summer/Scala/learning"]
+trust_level = "trusted"
+
+[projects."/Users/wangyiran/Downloads/第一课 Supervised Machine Learning Regression and Classification/week1"]
+trust_level = "trusted"
+
+[projects."/Users/wangyiran/Desktop/webgame"]
+trust_level = "trusted"
+
+[projects."/Users/wangyiran/STUDY/go"]
+trust_level = "trusted"
+
+[projects."/Users/wangyiran/Documents/Codex/2026-07-29/new-chat"]
+trust_level = "trusted"
+
+[projects."/Users/wangyiran/Desktop/myapps"]
+trust_level = "trusted"
+
+[projects."/Users/wangyiran/STUDY/rust/rust_basic"]
+trust_level = "trusted"
+
+[projects."/Users/wangyiran/Desktop/todo-app"]
+trust_level = "trusted"
+
+[projects."/Users/wangyiran/STUDY/summer/WebDev/js_files"]
+trust_level = "trusted"
+
+[projects."/Users/wangyiran/web-service-gin"]
+trust_level = "trusted"
+
+[projects."/Users/wangyiran/Documents/Codex/2026-08-11/7"]
+trust_level = "trusted"
+
+[projects."/Users/wangyiran/STUDY/cs50/codes"]
+trust_level = "trusted"
+
+[projects."/Users/wangyiran/Desktop/xhs-photo"]
+trust_level = "trusted"
+
+[tui]
+theme = "catppuccin-mocha"
+
+[tui.model_availability_nux]
+"gpt-5.5" = 4
+"gpt-5.6-sol" = 4
+
+[notice.model_migrations]
+"gpt-5.3-codex" = "gpt-5.4"
+
+[plugins."google-calendar@openai-curated"]
+enabled = true
+
+[plugins."documents@openai-primary-runtime"]
+enabled = true
+
+[plugins."spreadsheets@openai-primary-runtime"]
+enabled = true
+
+[plugins."presentations@openai-primary-runtime"]
+enabled = true
+
+[plugins."github@openai-curated"]
+enabled = true
+
+[plugins."pdf@openai-primary-runtime"]
+enabled = true
+
+[plugins."template-creator@openai-primary-runtime"]
+enabled = true
+
+[plugins."latex@openai-bundled"]
+enabled = true
+
+[plugins."academic-research-skills@academic-research-skills"]
+enabled = true
+
+[plugins."lua-lsp@claude-plugins-official"]
+enabled = true
+
+[plugins."chrome@openai-bundled"]
+enabled = true
+
+[plugins."visualize@openai-bundled"]
+enabled = true
+
+[plugins."superpowers@openai-curated-remote"]
+enabled = false
+
+[plugins."sites@openai-bundled"]
+enabled = true
+
+[plugins."browser@openai-bundled"]
+enabled = true
+
+[marketplaces.openai-bundled]
+last_updated = "2026-08-12T10:40:59Z"
+source_type = "local"
+source = "/Users/wangyiran/.codex/.tmp/bundled-marketplaces/openai-bundled"
+
+[marketplaces.openai-primary-runtime]
+last_updated = "2026-08-12T10:42:27Z"
+source_type = "local"
+source = "/Users/wangyiran/.cache/codex-runtimes/codex-primary-runtime/plugins/openai-primary-runtime"
+
+[marketplaces.academic-research-skills]
+last_updated = "2026-08-12T10:40:41Z"
+last_revision = "bc1478d8747b8fa2665aef5c8260f19999ce59cb"
+source_type = "git"
+source = "https://github.com/Imbad0202/academic-research-skills.git"
+
+[marketplaces.claude-plugins-official]
+last_updated = "2026-08-12T10:40:47Z"
+last_revision = "38142b19c224d3b4096cb32f3620649fb321882f"
+source_type = "git"
+source = "https://github.com/anthropics/claude-plugins-official.git"
+
+[desktop]
+appearanceTheme = "system"
+appearanceLightCodeThemeId = "codex"
+appearanceDarkCodeThemeId = "codex"
+sansFontSize = 16
+codeFontSize = 16
+conversationDetailMode = "STEPS_PROSE"
+selected-avatar-id = "null-signal"
+usePointerCursors = true
+reduced-motion-preference = "system"
+followUpQueueMode = "queue"
+dock-icon-preference = "codex-system"
+show-context-window-usage = false
+mac-menu-bar-enabled = true
+preventSleepWhileRunning = true
+defaultTerminalLocation = "bottom"
+
+[desktop.appearanceLightChromeTheme]
+accent = "#0169cc"
+contrast = 40
+ink = "#0d0d0d"
+opaqueWindows = false
+surface = "#ffffff"
+
+[desktop.appearanceLightChromeTheme.fonts]
+
+[desktop.appearanceLightChromeTheme.semanticColors]
+diffAdded = "#00a240"
+diffRemoved = "#e02e2a"
+skill = "#751ed9"
+
+[desktop.appearanceDarkChromeTheme]
+accent = "#0169cc"
+contrast = 50
+ink = "#fcfcfc"
+opaqueWindows = false
+surface = "#111111"
+
+[desktop.appearanceDarkChromeTheme.fonts]
+code = '"Geist Mono", ui-monospace, "SFMono-Regular"'
+
+[desktop.appearanceDarkChromeTheme.semanticColors]
+diffAdded = "#00a240"
+diffRemoved = "#e02e2a"
+skill = "#b06dff"
+
+[desktop.open-in-target-preferences]
+global = "systemDefault"
+
+[features]
+hooks = true
+js_repl = false
+memories = true
+
+[shell_environment_policy]
+inherit = "core"
+
+[shell_environment_policy.set]
+ANTHROPIC_AUTH_TOKEN = "REPLACE_WITH_LOCAL_TOKEN"
+ANTHROPIC_BASE_URL = "https://api.deepseek.com/anthropic"
+ANTHROPIC_DEFAULT_HAIKU_MODEL = "deepseek-v4-pro"
+ANTHROPIC_DEFAULT_HAIKU_MODEL_NAME = "deepseek-v4-pro[1m]"
+ANTHROPIC_DEFAULT_OPUS_MODEL = "deepseek-v4-pro[1M]"
+ANTHROPIC_DEFAULT_OPUS_MODEL_NAME = "deepseek-v4-pro[1m]"
+ANTHROPIC_DEFAULT_SONNET_MODEL = "deepseek-v4-pro[1M]"
+ANTHROPIC_DEFAULT_SONNET_MODEL_NAME = "deepseek-v4-pro[1m]"
+ANTHROPIC_MODEL = "deepseek-v4-pro[1m]"
+API_TIMEOUT_MS = "3000000"
+CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC = "1"
+BROWSER_USE_AVAILABLE_BACKENDS = "chrome,iab"
+NODE_REPL_TRUSTED_BROWSER_CLIENT_SHA256S = "8e86beb821b9afc846211798e0113bd4b9e79312dfcd135eb447bdb154f64071"
+NODE_REPL_TRUSTED_CODE_PATHS = "/Users/wangyiran/.codex:/Applications/ChatGPT.app/Contents/Resources/cua_node/lib/node_modules"
+
+[hooks.state]
+
+[hooks.state."academic-research-skills@academic-research-skills:hooks/hooks.json:pre_tool_use:0:0"]
+trusted_hash = "sha256:0f1b53067103c5b4bd1dac1c951d9148f14b164b4240aa3c9d21171caed2ca01"
+
+[hooks.state."academic-research-skills@academic-research-skills:hooks/hooks.json:session_start:0:0"]
+trusted_hash = "sha256:ec70cf5a9224931739c39e8ee3146d7905e7b6b39d38c7660320462ac7acef6b"
+
+[hooks.state."/Users/wangyiran/.codex/hooks.json:session_start:0:0"]
+trusted_hash = "sha256:160482c6416c4138117fd49e5a4cba5fa222f309a0500c4ca9f89c4c3317fa44"
+
+[mcp_servers.node_repl]
+args = []
+command = "/Applications/ChatGPT.app/Contents/Resources/cua_node/bin/node_repl"
+startup_timeout_sec = 120
+
+[mcp_servers.node_repl.env]
+NODE_REPL_NATIVE_PIPE_CONNECT_TIMEOUT_MS = "1000"
+NODE_REPL_NODE_MODULE_DIRS = "/Applications/ChatGPT.app/Contents/Resources/cua_node/lib/node_modules"
+NODE_REPL_NODE_PATH = "/Applications/ChatGPT.app/Contents/Resources/cua_node/bin/node"
+NODE_REPL_TRUSTED_CODE_PATHS = "/Users/wangyiran/.codex:/Applications/ChatGPT.app/Contents/Resources/cua_node/lib/node_modules"
+CODEX_HOME = "/Users/wangyiran/.codex"
+NODE_REPL_TRUSTED_BROWSER_CLIENT_SHA256S = "8e86beb821b9afc846211798e0113bd4b9e79312dfcd135eb447bdb154f64071"
+BROWSER_USE_AVAILABLE_BACKENDS = "chrome,iab"
+NODE_REPL_INSTRUCTIONS_USE_CASE_BROWSER = "Control the in-app browser in conjunction with the Browser Plugin."
+NODE_REPL_INSTRUCTIONS_USE_CASE_CHROME = "Control the Chrome browser in conjunction with the Chrome Plugin. Prefer this method of controlling Chrome over alternatives (such as Computer Use) unless the user explicitly mentions an alternative."
+NODE_REPL_INSTRUCTIONS_USE_CASE_COMPUTER_USE = "Control desktop apps on macOS through Computer Use."
+BROWSER_USE_CODEX_APP_BUILD_FLAVOR = "prod"
+BROWSER_USE_CODEX_APP_VERSION = "26.803.61601"
+CODEX_CLI_PATH = "/Applications/ChatGPT.app/Contents/Resources/codex"
+
+[mcp_servers.computer-use]
+command = "./Codex Computer Use.app/Contents/SharedSupport/SkyComputerUseClient.app/Contents/MacOS/SkyComputerUseClient"
+args = ["mcp"]
+cwd = "."
+enabled = false
+
+[[skills.config]]
+path = "/Users/wangyiran/.codex/skills/academic-paper-summarizer/SKILL.md"
+enabled = false
+
+[[skills.config]]
+path = "/Users/wangyiran/.codex/skills/academic-research-suite/SKILL.md"
+enabled = false
+
+[[skills.config]]
+path = "/Users/wangyiran/.codex/skills/bottleneck-hunter/SKILL.md"
+enabled = false
+
+[[skills.config]]
+path = "/Users/wangyiran/.codex/skills/deep-company-series/SKILL.md"
+enabled = false
+
+[[skills.config]]
+path = "/Users/wangyiran/.agents/skills/diagnose/SKILL.md"
+enabled = false
+
+[[skills.config]]
+path = "/Users/wangyiran/.codex/plugins/cache/openai-primary-runtime/documents/26.715.12143/skills/documents/SKILL.md"
+enabled = false
+
+[[skills.config]]
+path = "/Users/wangyiran/.codex/skills/dyp-ask/SKILL.md"
+enabled = false
+
+[[skills.config]]
+path = "/Users/wangyiran/.codex/skills/earnings-review/SKILL.md"
+enabled = false
+
+[[skills.config]]
+path = "/Users/wangyiran/.codex/skills/earnings-team/SKILL.md"
+enabled = false
+
+[[skills.config]]
+path = "/Users/wangyiran/.codex/skills/ecc-guide/SKILL.md"
+enabled = false
+
+[[skills.config]]
+path = "/Users/wangyiran/.codex/skills/excalidraw-diagram/SKILL.md"
+enabled = false
+
+[[skills.config]]
+path = "/Users/wangyiran/.codex/skills/financial-data/SKILL.md"
+enabled = false
+
+[[skills.config]]
+path = "/Users/wangyiran/.codex/skills/find-skills/SKILL.md"
+enabled = false
+
+[[skills.config]]
+path = "/Users/wangyiran/.agents/skills/improve-codebase-architecture/SKILL.md"
+enabled = false
+
+[[skills.config]]
+path = "/Users/wangyiran/.codex/skills/industry-funnel/SKILL.md"
+enabled = false
+
+[[skills.config]]
+path = "/Users/wangyiran/.codex/skills/industry-research/SKILL.md"
+enabled = false
+
+[[skills.config]]
+path = "/Users/wangyiran/.codex/skills/investment-checklist/SKILL.md"
+enabled = false
+
+[[skills.config]]
+path = "/Users/wangyiran/.codex/skills/investment-research/SKILL.md"
+enabled = false
+
+[[skills.config]]
+path = "/Users/wangyiran/.codex/skills/investment-memo-craft/SKILL.md"
+enabled = false
+
+[[skills.config]]
+path = "/Users/wangyiran/.codex/skills/investment-team/SKILL.md"
+enabled = false
+
+[[skills.config]]
+path = "/Users/wangyiran/.codex/skills/management-deep-dive/SKILL.md"
+enabled = false
+
+[[skills.config]]
+path = "/Users/wangyiran/.codex/skills/news-pulse/SKILL.md"
+enabled = false
+
+[[skills.config]]
+path = "/Users/wangyiran/.codex/skills/private-company-research/SKILL.md"
+enabled = false
+
+[[skills.config]]
+path = "/Users/wangyiran/.codex/skills/quality-screen/SKILL.md"
+enabled = false
+
+[[skills.config]]
+path = "/Users/wangyiran/.understand-anything/repo/understand-anything-plugin/skills/understand-onboard/SKILL.md"
+enabled = false
+
+[[skills.config]]
+path = "/Users/wangyiran/.understand-anything/repo/understand-anything-plugin/skills/understand-knowledge/SKILL.md"
+enabled = false
+
+[[skills.config]]
+path = "/Users/wangyiran/.understand-anything/repo/understand-anything-plugin/skills/understand-explain/SKILL.md"
+enabled = false
+
+[[skills.config]]
+path = "/Users/wangyiran/.understand-anything/repo/understand-anything-plugin/skills/understand-domain/SKILL.md"
+enabled = false
+
+[[skills.config]]
+path = "/Users/wangyiran/.understand-anything/repo/understand-anything-plugin/skills/understand-diff/SKILL.md"
+enabled = false
+
+[[skills.config]]
+path = "/Users/wangyiran/.understand-anything/repo/understand-anything-plugin/skills/understand-dashboard/SKILL.md"
+enabled = false
+
+[[skills.config]]
+path = "/Users/wangyiran/.codex/plugins/cache/openai-bundled/browser/26.715.61943/skills/control-in-app-browser/SKILL.md"
+enabled = false
+
+[memories]
+generate_memories = true
+use_memories = true
