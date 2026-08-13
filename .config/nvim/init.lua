@@ -500,8 +500,6 @@ do
   for position = 1, 9 do
     vim.keymap.set('n', '<C-' .. position .. '>', function() select_buffer(position) end, { desc = 'Select buffer ' .. position })
   end
-  vim.keymap.set('n', '<C-w>', '<cmd>bdelete<CR>', { desc = 'Close buffer' })
-
   vim.keymap.set('n', '[[', '<cmd>bprevious<CR>', { desc = 'Previous buffer' })
   vim.keymap.set('n', ']]', '<cmd>bnext<CR>', { desc = 'Next buffer' })
   vim.keymap.set('n', '[b', '<cmd>normal! [[<CR>', { desc = 'Previous section' })
