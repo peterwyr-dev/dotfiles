@@ -1,16 +1,16 @@
 {
     "disable_ai": false,
     "project_panel": {
-        "dock": "right",
+        "dock": "left",
     },
     "outline_panel": {
-        "dock": "right",
+        "dock": "left",
     },
     "collaboration_panel": {
-        "dock": "right",
+        "dock": "left",
     },
     "git_panel": {
-        "dock": "right",
+        "dock": "left",
     },
     "theme": {
         "mode": "dark",
@@ -18,11 +18,11 @@
         "dark": "Rosé Pine",
     },
     "agent": {
-        "dock": "left",
+        "dock": "right",
         "default_model": {
-            "effort": "medium",
+            "effort": "high",
             "provider": "zed.dev",
-            "model": "gpt-5.6-sol",
+            "model": "claude-sonnet-5",
             "enable_thinking": true,
         },
         "favorite_models": [
@@ -42,9 +42,9 @@
     "file_finder": {
         "modal_max_width": "large",
     },
-    "ui_font_family": "IosevkaTerm Nerd Font Mono",
+    "ui_font_family": "DankMono Nerd Font",
     "ui_font_size": 18,
-    "buffer_font_family": "IosevkaTerm Nerd Font Mono",
+    "buffer_font_family": "DankMono Nerd Font",
     "buffer_font_size": 18.0,
     "buffer_line_height": {
         "custom": 2,

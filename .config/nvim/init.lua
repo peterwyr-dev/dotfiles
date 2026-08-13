@@ -144,7 +144,6 @@ do
   vim.keymap.set('n', 'U', '<c-r>')
   vim.keymap.set('n', '=', 'Nzz')
   vim.keymap.set('n', '-', 'nzz')
-  vim.keymap.set({ 'i', 'v' }, 'jk', '<Esc>')
   vim.keymap.set('n', '<C-/>', 'gcc', { remap = true, desc = 'Toggle comment' })
   vim.keymap.set('x', '<C-/>', 'gc', { remap = true, desc = 'Toggle comment selection' })
   -- TIP: Disable arrow keys in normal mode
@@ -489,6 +488,20 @@ do
   require('mini.tabline').setup {
     show_icons = vim.g.have_nerd_font,
   }
+
+  -- Browser-style buffer navigation. mini.tabline displays listed buffers,
+  -- so these mappings switch and close buffers rather than Vim tabpages.
+  local function select_buffer(position)
+    local buffers = vim.tbl_filter(function(buf) return vim.bo[buf].buflisted end, vim.api.nvim_list_bufs())
+    local target = position == 9 and buffers[#buffers] or buffers[position]
+    if target then vim.api.nvim_set_current_buf(target) end
+  end
+
+  for position = 1, 9 do
+    vim.keymap.set('n', '<C-' .. position .. '>', function() select_buffer(position) end, { desc = 'Select buffer ' .. position })
+  end
+  vim.keymap.set('n', '<C-w>', '<cmd>bdelete<CR>', { desc = 'Close buffer' })
+
   vim.keymap.set('n', '[[', '<cmd>bprevious<CR>', { desc = 'Previous buffer' })
   vim.keymap.set('n', ']]', '<cmd>bnext<CR>', { desc = 'Next buffer' })
   vim.keymap.set('n', '[b', '<cmd>normal! [[<CR>', { desc = 'Previous section' })
