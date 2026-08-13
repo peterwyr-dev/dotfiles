@@ -1078,7 +1078,7 @@ do
   metals_config.capabilities = require('blink.cmp').get_lsp_capabilities()
 
   vim.api.nvim_create_autocmd('FileType', {
-    pattern = { 'scala', 'sbt', 'java' },
+    pattern = { 'scala', 'sbt' },
     group = vim.api.nvim_create_augroup('nvim-metals', { clear = true }),
     callback = function(event)
       local map_opts = function(desc) return { buffer = event.buf, desc = 'Metals: ' .. desc } end

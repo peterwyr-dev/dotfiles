@@ -507,8 +507,8 @@
         "editor.defaultFormatter": "scalameta.metals"
     },
     "workbench.colorTheme": "Rosé Pine (no italics)",
-    "workbench.iconTheme": "easy-icons",
-    "workbench.productIconTheme": "fluent-icons",
+    "workbench.iconTheme": "material-icon-theme",
+    "workbench.productIconTheme": "material-product-icons",
     "[rust]": {
         "editor.defaultFormatter": "rust-lang.rust-analyzer"
     },
