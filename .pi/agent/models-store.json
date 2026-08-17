@@ -68,7 +68,7 @@
         }
       }
     ],
-    "checkedAt": 1786618886815,
+    "checkedAt": 1786943745590,
     "lastModified": 1786444602000,
     "etag": "W/\"c856e605b796f2df5d2cc4d7c20336f5\""
   },
@@ -320,7 +320,7 @@
         }
       }
     ],
-    "checkedAt": 1786618886814,
+    "checkedAt": 1786943778873,
     "lastModified": 1786351890000,
     "etag": "W/\"7572a78e60b78526600ed2a9b74b579d\""
   },
@@ -332,9 +332,6 @@
         "api": "anthropic-messages",
         "provider": "kimi-coding",
         "baseUrl": "https://api.kimi.com/coding",
-        "headers": {
-          "User-Agent": "KimiCLI/1.5"
-        },
         "compat": {
           "allowEmptySignature": true,
           "forceAdaptiveThinking": true
@@ -368,9 +365,6 @@
         "api": "anthropic-messages",
         "provider": "kimi-coding",
         "baseUrl": "https://api.kimi.com/coding",
-        "headers": {
-          "User-Agent": "KimiCLI/1.5"
-        },
         "compat": {
           "forceAdaptiveThinking": true
         },
@@ -403,9 +397,6 @@
         "api": "anthropic-messages",
         "provider": "kimi-coding",
         "baseUrl": "https://api.kimi.com/coding",
-        "headers": {
-          "User-Agent": "KimiCLI/1.5"
-        },
         "compat": {
           "allowEmptySignature": true,
           "forceAdaptiveThinking": true
@@ -430,9 +421,6 @@
         "api": "anthropic-messages",
         "provider": "kimi-coding",
         "baseUrl": "https://api.kimi.com/coding",
-        "headers": {
-          "User-Agent": "KimiCLI/1.5"
-        },
         "compat": {
           "forceAdaptiveThinking": true
         },
@@ -451,8 +439,8 @@
         "maxTokens": 32768
       }
     ],
-    "checkedAt": 1786618886813,
-    "lastModified": 1785146173000,
-    "etag": "W/\"a5e501e93019dfc26a0076a002bd616a\""
+    "checkedAt": 1786943774806,
+    "lastModified": 1786710719000,
+    "etag": "W/\"26180ce4b0215799b9e112ba4783cc2b\""
   }
 }

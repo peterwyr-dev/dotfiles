@@ -15,7 +15,7 @@
     "editor.suggest.showInterfaces": true,
     "editor.tabSize": 4,
     "editor.fontSize": 14,
-    "editor.fontFamily": "DankMono Nerd Font",
+    "editor.fontFamily": "Iosevka",
     "editor.tokenColorCustomizations": {
         "comments": {
             "fontStyle": ""
@@ -164,7 +164,7 @@
         //     "after": ["<Esc>"],
         // },
     ],
-    "vim.cursorStylePerMode.insert": "line",
+    "vim.cursorStylePerMode.insert": "block",
     "vim.cursorStylePerMode.replace": "block-outline",
     "vim.visualModeKeyBindingsNonRecursive": [
                 {
@@ -309,7 +309,7 @@
     // 4. 终端与外部工具 (Terminal / Tools)
     // ==========================================
     "terminal.integrated.defaultProfile.osx": "zsh",
-    "terminal.integrated.fontFamily": "DankMono Nerd Font",
+    "terminal.integrated.fontFamily": "IosevkaTerm Nerd Font Mono",
     "terminal.integrated.fontSize": 13,
     "terminal.integrated.lineHeight": 1.4,
     "terminal.integrated.smoothScrolling": true,
@@ -347,12 +347,13 @@
 
     // Custom CSS & JS Loader
     "vscode_custom_css.imports": [
-        "file:///Users/wangyiran/.vscode/extensions/brandonkirbyson.vscode-animations-2.0.7/dist/updateHandler.js",
+        "file:///Users/wangyiran/.vscode/extensions/brandonkirbyson.vscode-animations-2.0.8/dist/updateHandler.js",
     ],
     "vscode_custom_css.policy": true,
 
     // Animations 插件
     "animations.Install-Method": "Custom CSS and JS",
+    "animations.Smooth-Mode": true,
     "animations.UseCursorColorForCursorAnimation": true,
     "animations.CursorAnimationOptions": {
         "Color": "#FFFFFF",
@@ -470,7 +471,6 @@
     },
     "C_Cpp.formatting": "clangFormat",
     "editor.inlineSuggest.enabled": false,
-    "editor.cursorBlinking": "solid",
     "liveServer.settings.donotShowInfoMsg": true,
     "editor.showUnused": false,
     "zig.zls.enabled": "on",
@@ -501,7 +501,6 @@
     "leetcode.workspaceFolder": "/Users/wangyiran/.leetcode",
     "leetcode.defaultLanguage": "cpp",
     "leetcode.hint.configWebviewMarkdown": false,
-    "editor.overtypeCursorStyle": "line",
     "markdown-preview-enhanced.previewTheme": "vscode.css",
     "[scala]": {
         "editor.defaultFormatter": "scalameta.metals"
@@ -513,7 +512,7 @@
         "editor.defaultFormatter": "rust-lang.rust-analyzer"
     },
     "workbench.activityBar.location": "top",
-    "custom-ui-style.font.sansSerif": "DankMono Nerd Font",
+    "custom-ui-style.font.sansSerif": "Iosevka",
     "chat.titleBar.openInAgentsWindow.enabled": false,
     "workbench.browser.showInTitleBar": true,
     "window.commandCenter": false,
@@ -523,7 +522,8 @@
         "editor.defaultFormatter": "rvest.vs-code-prettier-eslint"
     },
     "claudeCode.preferredLocation": "sidebar",
-    "chat.editor.fontFamily": "DankMono Nerd Font",
-    "scm.inputFontFamily": "DankMono Nerd Font",
-    "chat.fontFamily": "DankMono Nerd Font",
+    "chat.editor.fontFamily": "Iosevka",
+    "scm.inputFontFamily": "Iosevka",
+    "chat.fontFamily": "Iosevka",
+    "editor.overtypeCursorStyle": "line",
 }

@@ -14,7 +14,7 @@ new_cwd = "follow"
 [keys]
 # Match the basic tmux muscle memory.
 prefix = "ctrl+s"
-reload_config = "prefix+r"
+reload_config = "prefix+R"
 detach = "prefix+d"
 new_tab = "prefix+c"
 previous_tab = "prefix+p"
@@ -28,7 +28,7 @@ split_vertical = "prefix+\\"
 split_horizontal = "prefix+minus"
 close_pane = "prefix+x"
 zoom = "prefix+z"
-resize_mode = "prefix+R"
+resize_mode = "prefix+r"
 
 [[keys.command]]
 key = "prefix+H"

@@ -5,7 +5,7 @@ Only individual configuration directories are linked; `~/.config` itself is not 
 
 ## Managed configuration
 
-- Shell: Zsh and Zim
+- Shell: Zsh and Zim (`~/.zshenv` bootstraps `ZDOTDIR=~/.config/zsh`)
 - Window management: yabai, skhd, focus-pane
 - Terminals: Kitty and Ghostty
 - Editors: Neovim, Doom Emacs, Zed, and VS Code
@@ -57,7 +57,7 @@ Review everything before publishing, especially settings that might contain cred
 
 ```sh
 git status --short
-git diff --no-index /dev/null .zshrc  # example review
+git diff --no-index /dev/null .config/zsh/.zshrc  # example review
 git add .
 git diff --cached --check
 git diff --cached

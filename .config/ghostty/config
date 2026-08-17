@@ -53,7 +53,7 @@
 window-padding-x = 14,4
 window-padding-y = 14,4
 theme = Rose pine
-font-family = "IosevkaTerm Nerd Font Mono"
+font-family = "Iosevka Term"
 font-size = 19
 font-thicken = true
 font-thicken-strength = 100

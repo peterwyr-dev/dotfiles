@@ -38,7 +38,8 @@ WORDCHARS=${WORDCHARS//[\/]}
 ZSH_AUTOSUGGEST_MANUAL_REBIND=1
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=242'
 ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets)
-ZIM_HOME=${ZDOTDIR:-${HOME}}/.zim
+# Keep downloaded Zim modules outside the tracked configuration directory.
+ZIM_HOME=$HOME/.zim
 # zimfw 管理器脚本由 Homebrew 提供 (brew install zimfw)
 ZIM_BIN=/opt/homebrew/opt/zimfw/share/zimfw.zsh
 
@@ -49,7 +50,7 @@ fi
 
 # Initialize modules. (这一步会生成 compdef)
 source ${ZIM_HOME}/init.zsh
-source "$HOME/.config/zsh/fzf.zsh"
+source "$ZDOTDIR/fzf.zsh"
 # fzf 的 completion.zsh 会把 Tab 抢去（只做路径补全），这里把 Tab 交还给 fzf-tab。
 # fzf 的 Ctrl-T / Ctrl-R / Alt-C 不受影响。
 enable-fzf-tab
@@ -70,21 +71,15 @@ export KEYTIMEOUT=1
 # Let Ctrl-s reach tmux instead of terminal flow control.
 [[ -t 0 ]] && stty -ixon 2>/dev/null
 
-# ── Vi mode 光标形状：插入模式用竖线，命令模式用实心块 ──
+# ── Vi mode 光标形状：插入模式和命令模式都使用实心块 ──
 function _cursor_block() { print -n -- $'\e[2 q' }
-function _cursor_line() { print -n -- $'\e[6 q' }
 
-function zle-keymap-select() {
-  case $KEYMAP in
-    vicmd) _cursor_block ;;
-    *)     _cursor_line ;;
-  esac
-}
+function zle-keymap-select() { _cursor_block }
 zle -N zle-keymap-select
 
 function zle-line-init() {
   zle -K viins
-  _cursor_line
+  _cursor_block
 }
 zle -N zle-line-init
 
@@ -136,7 +131,7 @@ alias lg='lazygit'
 alias t='tmux'
 alias f='fastfetch'
 alias sp='spf'
-alias ya='yazi'
+alias y='yazi'
 alias e='emacs -nw'
 alias cc='claude'
 alias co='codex'
@@ -228,6 +223,7 @@ unset __conda_setup
 # <<< conda initialize <<<
 
 source /Users/wangyiran/.config/broot/launcher/bash/br
+source ~/.config/zsh/rose-pine-man/rose-pine-man.zsh
 
 # Added by Antigravity IDE
 export PATH="/Users/wangyiran/.antigravity-ide/antigravity-ide/bin:$PATH"

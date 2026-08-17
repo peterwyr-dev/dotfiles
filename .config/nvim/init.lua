@@ -28,6 +28,9 @@ do
   -- Don't show the mode, since it's already in the status line
   vim.o.showmode = false
 
+  -- Keep the cursor as a block in every mode, including Insert mode
+  vim.o.guicursor = 'a:block'
+
   -- Sync clipboard between OS and Neovim.
   --  Schedule the setting after `UiEnter` because it can increase startup-time.
   --  Remove this option if you want your OS clipboard to remain independent.
@@ -408,8 +411,11 @@ do
     gh 'nvim-lua/plenary.nvim',
     gh 'mikavilpas/yazi.nvim',
   }
+  -- Let yazi.nvim handle directory arguments too (for example, `v .`).
+  -- Prevent netrw from loading before yazi installs its directory handler.
+  vim.g.loaded_netrwPlugin = 1
   require('yazi').setup {
-    open_for_directories = false,
+    open_for_directories = true,
     floating_window_scaling_factor = 0.9,
     yazi_floating_window_border = 'rounded',
     yazi_floating_window_winblend = 0,
@@ -418,39 +424,10 @@ do
       show_help = '<F1>',
     },
   }
-  vim.keymap.set({ 'n', 'v' }, '<leader>-', '<cmd>Yazi<CR>', { desc = 'Open Yazi at current file' })
+  vim.keymap.set('n', '<leader>e', '<cmd>Yazi<CR>', { desc = 'Open Yazi at current file' })
   -- -- Highlight todo, notes, etc in comments
   -- vim.pack.add { gh 'folke/todo-comments.nvim' }
   -- require('todo-comments').setup { signs = false }
-
-  -- [[ triptych.nvim ]]
-  -- Triptych resolves `nvim-web-devicons` while it is loaded, so install the
-  -- icon provider before requiring Triptych.
-  vim.pack.add {
-    gh 'nvim-tree/nvim-web-devicons',
-    gh 'simonmclean/triptych.nvim',
-  }
-  require('triptych').setup {
-    options = {
-      line_numbers = { enabled = false },
-      border = 'rounded',
-      file_icons = { enabled = true },
-    },
-  }
-  vim.keymap.set('n', '<leader>e', '<cmd>Triptych<CR>', { silent = true, desc = 'Toggle Triptych explorer' })
-  vim.api.nvim_create_autocmd('VimEnter', {
-    desc = 'Open directory arguments with Triptych',
-    callback = function()
-      local argument = vim.fn.argv(0)
-      if vim.fn.argc() ~= 1 or vim.fn.isdirectory(argument) ~= 1 then return end
-
-      local directory = vim.fn.fnamemodify(argument, ':p')
-      local directory_buffer = vim.api.nvim_get_current_buf()
-      vim.cmd.enew()
-      if vim.api.nvim_buf_is_valid(directory_buffer) then vim.api.nvim_buf_delete(directory_buffer, { force = true }) end
-      require('triptych').toggle_triptych(directory)
-    end,
-  })
 
   -- [[ mini.nvim ]]
   --  A collection of various small independent plugins/modules
@@ -533,12 +510,14 @@ do
       header = {
         '',
         '',
-        '███╗   ██╗███████╗ ██████╗ ██╗   ██╗██╗███╗   ███╗',
-        '████╗  ██║██╔════╝██╔═══██╗██║   ██║██║████╗ ████║',
-        '██╔██╗ ██║█████╗  ██║   ██║██║   ██║██║██╔████╔██║',
-        '██║╚██╗██║██╔══╝  ██║   ██║╚██╗ ██╔╝██║██║╚██╔╝██║',
-        '██║ ╚████║███████╗╚██████╔╝ ╚████╔╝ ██║██║ ╚═╝ ██║',
-        '╚═╝  ╚═══╝╚══════╝ ╚═════╝   ╚═══╝  ╚═╝╚═╝     ╚═╝',
+        '                                                                     ',
+        '       ████ ██████           █████      ██                      ',
+        '      ███████████             █████                              ',
+        '      █████████ ███████████████████ ███   ███████████    ',
+        '     █████████  ███    █████████████ █████ ██████████████    ',
+        '    █████████ ██████████ █████████ █████ █████ ████ █████    ',
+        '  ███████████ ███    ███ █████████ █████ █████ ████ █████   ',
+        ' ██████  █████████████████████ ████ █████ █████ ████ ██████  ',
         '',
         '  Neovim',
         '',
@@ -588,7 +567,7 @@ do
           key = 'e',
           keymap = 'SPC e',
           key_format = ' %s',
-          action = 'Triptych',
+          action = 'Yazi',
         },
         {
           icon = ' ',
@@ -980,12 +959,26 @@ do
   vim.pack.add { { src = gh 'L3MON4D3/LuaSnip', version = vim.version.range '2.*' } }
   require('luasnip').setup {}
 
-  -- `friendly-snippets` contains a variety of premade snippets.
-  --    See the README about individual language/framework/plugin snippets:
-  --    https://github.com/rafamadriz/friendly-snippets
-  --
-  -- vim.pack.add { gh 'rafamadriz/friendly-snippets' }
-  -- require('luasnip.loaders.from_vscode').lazy_load()
+  -- Load community snippets for common languages (fori, foreach, class, etc.).
+  vim.pack.add { gh 'rafamadriz/friendly-snippets' }
+  require('luasnip.loaders.from_vscode').lazy_load()
+
+  -- IntelliJ-style Java aliases that are not included in friendly-snippets.
+  local snippet = require('luasnip').snippet
+  local text = require('luasnip').text_node
+  local insert = require('luasnip').insert_node
+  require('luasnip').add_snippets('java', {
+    snippet('psvm', {
+      text { 'public static void main(String[] args) {', '\t' },
+      insert(0),
+      text { '', '}' },
+    }),
+    snippet('sout', {
+      text 'System.out.println(',
+      insert(1),
+      text ');',
+    }),
+  })
 
   -- [[ Autocomplete Engine ]]
   vim.pack.add { { src = gh 'saghen/blink.cmp', version = vim.version.range '1.*' } }

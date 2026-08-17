@@ -5,6 +5,8 @@
 # for dark and light modes under `[flavor]`, and do so in those flavors instead.
 #:schema https://yazi-rs.github.io/schemas/theme.json
 
+[flavor]
+dark = "rose-pine"
 # vim:fileencoding=utf-8:foldmethod=marker
 
 # : App {{{
